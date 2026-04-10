@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../../../opt/lampp/htdocs"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DAW",
+		"jdk.advanced.disable.projectSearchLimit": true,
+		"jdk.advanced.disable.nbjavac": false,
+		"jdk.test.editor.enableShortcuts": true,
+		"liveServer.settings.port": 5501
+	}
+}

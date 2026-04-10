@@ -1,4 +1,4 @@
-public class Cuenta {
+public abstract class  Cuenta implements Imprimible {
 
     private String titular;
     private String codigo;
@@ -6,7 +6,7 @@ public class Cuenta {
     private double cuotaMantenimiento;
 
     public Cuenta (String titular, String codigo, double saldo) {
-        this.setTitular(codigo);
+        this.setCodigo(codigo);
         this.titular = titular;
         this.saldo = saldo;
         cuotaMantenimiento = -1;
@@ -62,12 +62,12 @@ public class Cuenta {
         saldo -= cantidad;
     } 
 
-    public boolean transferir(double cantidad, Cuenta destino) {
+    public boolean transferir(double cantidad, Cuenta origen, Cuenta destino) {
         boolean seHaRealizado = false;
 
-        if(destino != null) {
-            this.saldo -= cantidad;
-            destino.saldo += cantidad;
+        if(destino != null && cantidad < origen.getSaldo()) {
+            origen.retirar(cantidad);
+            destino.ingresar(cantidad);
             seHaRealizado = true;
         }
         
@@ -84,5 +84,13 @@ public class Cuenta {
         }
             
         return seHaRealizado;
+    }
+
+    @Override
+    public String imprimirDatos() {
+        return  "\nTitular :" + titular +
+                "\nCodigo: " + codigo +
+                "\nSaldo: " + saldo +
+                "\nCuota Mantenimiento" + cuotaMantenimiento;
     }
 }   

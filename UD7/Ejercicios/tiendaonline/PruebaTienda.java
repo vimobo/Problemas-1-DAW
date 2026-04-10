@@ -184,9 +184,16 @@ o un proyecto aún más difícil tipo videojuego RPG en Java (muy bueno para pra
 public class PruebaTienda {
     public static void main (String[]args) {
         Usuario u1 = new Usuario("Vi", "vi@gmail.com");
-        System.out.println(u1);
+        //System.out.println(u1);
 
         ProductoFisico p1 = new ProductoFisico( 1.2, 0.2, "Caracol", 2.99);
-        System.out.println(p1);
+        //System.out.println(p1);
+
+        Pedido p = new Pedido();
+        PagoTarjeta pt = new PagoTarjeta(1234);
+        p.pagar(pt);
+        p.aniadirProducto(p1);
+        System.out.println(p.mostrarPedido());
+
     }
 }

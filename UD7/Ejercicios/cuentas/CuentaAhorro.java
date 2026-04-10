@@ -30,12 +30,17 @@ public class CuentaAhorro extends Cuenta {
         
         if (this.getCuotaMantenimiento() != -1 && this.tipoInteres != -1) {
             this.retirar(this.getCuotaMantenimiento());
-            this.ingresar(this.tipoInteres);
+            this.ingresar((this.getSaldo() * this.tipoInteres/100) + this.getSaldo());
             seHaRealizado = true;
         }
             
         return seHaRealizado;
     }  
 
-    
+    @Override
+    public String imprimirDatos() {
+        return  super.imprimirDatos() + 
+                "\nTipo de Interes: " + tipoInteres;
+    }
+
 }

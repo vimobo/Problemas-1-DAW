@@ -7,4 +7,8 @@ public class ProductoDigital extends Producto {
         super(nombre, precio);
         this.tamanioArchivo = tamanioArchivo; 
     }
+
+    public double descargar(){
+        return tamanioArchivo;
+    }
 }

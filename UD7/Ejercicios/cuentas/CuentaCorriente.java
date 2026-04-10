@@ -83,4 +83,12 @@ public class CuentaCorriente extends Cuenta {
         
         return seHaRealizado;
     }
+
+    @Override
+    public String imprimirDatos() {
+        return  super.imprimirDatos() + 
+                "\nImporte por Transaccion: " + importePorTransaccion +
+                "\nNum Transacciones: " + numTransacciones +
+                "\nNum Tranacciones Exentas: " + numTransaccionesExentas;
+    }
 }

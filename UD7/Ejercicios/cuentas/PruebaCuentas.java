@@ -60,8 +60,8 @@ public class PruebaCuentas {
             System.out.println("no se hizo");
         }
 
-        System.out.println(cc1.getSaldo());
-        System.out.println(ca1.getSaldo());
+        System.out.println(cc1.imprimirDatos());
+        System.out.println(ca1.imprimirDatos());
         System.out.println();
 
 
